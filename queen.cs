@@ -21,9 +21,10 @@ class Pawn
     Y = y;
   }
 }
-  public class Program
+public class Program
+{
+  public static void Main()
   {
-  public static void Main(){
     Console.WriteLine("Please enter coordinates for the Queen");
     int Queenx = int.Parse(Console.ReadLine());
     int Queeny = int.Parse(Console.ReadLine());
@@ -35,11 +36,35 @@ class Pawn
     Pawn pawnPlayer = new Pawn(Pawnx, Pawny);
 
 
-    if(pawnPlayer.X == queenPlayer.X || pawnPlayer.Y == queenPlayer.Y){
-      Console.WriteLine("Attack Made");
+    for(int i = queenPlayer.X; i < 8; i++) {
+      for(int j = queenPlayer.Y; j < 8; j++) {
+        if(pawnPlayer.X == i && pawnPlayer.Y == j) {
+          Console.WriteLine("first diagonal rule done");
+        }
+      }
     }
-    else {
-      Console.WriteLine("Attack Not Made, You're Trash!");
+    for(int i = queenPlayer.X; i > 0; i--) {
+      Console.WriteLine(i);
+      for(int j = queenPlayer.Y; j < 8; j++) {
+        if(pawnPlayer.X == i && pawnPlayer.Y == j) {
+          Console.WriteLine("Second diagonal rule done");
+        }
+      }
     }
   }
 }
+
+// for(int p = queenPlayer.X; p < 0; p--) {
+    //   Console.WriteLine(p);
+    //   for(int o = queenPlayer.Y; o < 8; o++) {
+    //     if(pawnPlayer.X == p && pawnPlayer.Y == o) {
+    //       Console.WriteLine("Second diagonal rule done");
+    //     }
+    //   }
+    // }
+//     // horizontal and vertical checker
+//     if(pawnPlayer.X == queenPlayer.X || pawnPlayer.Y == queenPlayer.Y){
+//       Console.WriteLine("Attack Made");
+//     }
+//   }
+// }
