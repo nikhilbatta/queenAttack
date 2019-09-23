@@ -1,10 +1,5 @@
 using System;
 using System.Collections.Generic;
-// [System.ComponentModel.TypeConverter(typeof(System.Windows.PointConverter))]
-// [System.Serializable]
-// public struct Point : IFormattable
-
-
 
 class Queen
 {
